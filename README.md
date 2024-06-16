@@ -18,7 +18,8 @@
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
-  <a href="#download">Download</a>
+  <a href="#download">Download</a> •
+  <a href="#related">Related</a>
 </p>
 
 <div align="center">
