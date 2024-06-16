@@ -1,0 +1,106 @@
+[
+  {
+    "id": 0,
+    "name": "7eme",
+    "subjectsNumber": 3,
+    "subjects": [
+      {
+        "subjectId": 0,
+        "subjectName": "Math",
+        "coefficient": 4,
+        "examCoefficients": [1,1,2,0,0],
+        "numberOfFields": 3,
+        "editTextIds": ["math1", "math2", "math3", "math4", "math5"],
+        "editTextPlaceHolders" : ["Controle 1", "Controle 2", "Synthese", "", ""],
+        "resultTextViewId": "mathResult",
+        "checkBoxId": "mathCheck"
+      },
+      {
+        "subjectId": 1,
+        "subjectName": "Physics",
+        "coefficient": 3,
+        "examCoefficients": [1,2,0,0,0],
+        "numberOfFields": 2,
+        "editTextIds": ["physics1", "physics2", "physics3", "physics4", "physics5"],
+        "editTextPlaceHolders" : ["Controle 1", "Synthese", "", "", ""],
+        "resultTextViewId": "physicsResult",
+        "checkBoxId": "physicsCheck"
+      },{
+        "subjectId": 1,
+        "subjectName": "Physics",
+        "coefficient": 3,
+        "examCoefficients": [1,2,0,0,0],
+        "numberOfFields": 2,
+        "editTextIds": ["physics1", "physics2", "physics3", "physics4", "physics5"],
+        "editTextPlaceHolders" : ["Controle 1", "Synthese", "", "", ""],
+        "resultTextViewId": "physicsResult",
+        "checkBoxId": "physicsCheck"
+      }
+    ]
+  }
+  ,
+  {
+    "id": 1,
+    "name": "8eme",
+    "subjectsNumber": 2,
+    "subjects": [
+      {
+        "subjectId": 0,
+        "subjectName": "Arabic",
+        "coefficient": 4,
+        "examCoefficients": [1,1,1,3,0],
+        "numberOfFields": 4,
+        "editTextIds": ["math1", "math2", "math3", "math4", "math5"],
+        "editTextPlaceHolders" : ["Orale", "Controle 1", "Controle 2", "Synthese", ""],
+        "resultTextViewId": "mathResult",
+        "checkBoxId": "mathCheck"
+      },
+      {
+        "subjectId": 1,
+        "subjectName": "French",
+        "coefficient": 3,
+        "examCoefficients": [1,2,0,0,0],
+        "numberOfFields": 2,
+        "editTextIds": ["physics1", "physics2", "physics3", "physics4", "physics5"],
+        "editTextPlaceHolders" : ["Controle 1", "Synthese", "", "", ""],
+        "resultTextViewId": "physicsResult",
+        "checkBoxId": "physicsCheck"
+      } ]
+  }
+  ,
+  {
+    "id": 2,
+    "name": "9eme",
+    "subjectsNumber": 1,
+    "subjects": [
+      {
+        "subjectId": 0,
+        "subjectName": "Informatique",
+        "coefficient": 2,
+        "examCoefficients": [1,1,2,0,0],
+        "numberOfFields": 3,
+        "editTextIds": ["math1", "math2", "math3", "math4", "math5"],
+        "editTextPlaceHolders" : ["Controle 1", "Controle 2", "Synthese", "", ""],
+        "resultTextViewId": "mathResult",
+        "checkBoxId": "mathCheck"
+      }]
+  }
+  ,
+  {
+    "id": 3,
+    "name": "1ere",
+    "subjectsNumber": 1,
+    "subjects": [
+      {
+        "subjectId": 0,
+        "subjectName": "Philo",
+        "coefficient": 2,
+        "examCoefficients": [1,1,2,0,0],
+        "numberOfFields": 3,
+        "editTextIds": ["math1", "math2", "math3", "math4", "math5"],
+        "editTextPlaceHolders" : ["Controle 1", "Controle 2", "Synthese", "", ""],
+        "resultTextViewId": "mathResult",
+        "checkBoxId": "mathCheck"
+      }]
+  }
+]

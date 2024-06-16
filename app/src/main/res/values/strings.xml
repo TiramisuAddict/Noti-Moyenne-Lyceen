@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Noti</string>
+    <string name="menu">Menu</string>
+
+    <string name="Calculate">Ehseb</string>
+    
+    <string name="select_your_level">Choisissez votre niveau :</string>
+    <string name="select_your_orientation">choisissez votre orientation :</string>
+
+    <string name="dispense">Dispensé</string>
+    <string name="_0_0">0.0</string>
+    <string name="settings">PARAMETRES</string>
+    <string name="dspns">dispensé</string>
+    <string name="title_activity_history">HistoryActivity</string>
+    <string name="historique">Historique</string>
+    <string name="clear_history">Clear History</string>
+    <string name="email_icon">Email Icon</string>
+    <string name="taha_medien2_gmail_com">taha.medien2@gmail.com</string>
+    <string name="contactez_nous">Contactez-nous :</string>
+    <string name="ishak_bakraoui">Ishak Bakraoui</string>
+    <string name="israa_soudeny">Israa Soudeny</string>
+    <string name="mohamed_taha_medien">Mohamed Taha Medien</string>
+    <string name="contributeurs">Contributeurs :</string>
+    <string name="retour">retour</string>
+    <string name="propos">À propos</string>
+    <string name="coll_ge">collège</string>
+    <string name="lyc_e">Lycée</string>
+    <string name="_7_eme">7 eme</string>
+    <string name="_8_eme">8 eme</string>
+    <string name="_9_eme">9 eme</string>
+    <string name="_1_ere">1 ere</string>
+    <string name="_2_eme">2 eme</string>
+    <string name="_3_eme">3 eme</string>
+    <string name="_4_eme">4 eme</string>
+    <string name="sciences">Sciences</string>
+    <string name="lettres">Lettres</string>
+    <string name="informatique">Informatique</string>
+    <string name="economie">Economie</string>
+    <string name="info">Info</string>
+    <string name="technique">Technique</string>
+    <string name="math">Math</string>
+    <string name="mode_nuit">Mode nuit :</string>
+    <string name="appliquer">Appliquer</string>
+
+</resources>

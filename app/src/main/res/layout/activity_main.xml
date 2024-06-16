@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="182dp"
+            android:layout_height="183dp"
+            android:layout_marginBottom="22dp"
+            app:srcCompat="@drawable/menulogo"
+            tools:ignore="ContentDescription"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/historyCard"
+            android:layout_width="300dp"
+            android:layout_height="180dp"
+            android:layout_marginBottom="15dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="30dp"
+            app:cardBackgroundColor="?attr/colorOnPrimary"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="top|start"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                app:srcCompat="@drawable/ic_back"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/lastAverage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="@font/fredoka_semibold"
+                android:textAlignment="center"
+                android:textColor="?colorPrimary"
+                android:textSize="70sp" />
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/preparatoryButton"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="300dp"
+            android:layout_height="63dp"
+            android:backgroundTint="?attr/colorOnPrimary"
+            android:fontFamily="@font/fredoka_bold"
+            android:gravity="center"
+            android:text="@string/coll_ge"
+            android:textAlignment="center"
+            android:textColor="?colorPrimary"
+            android:textSize="16sp"
+            app:cornerRadius="80dp" />
+
+        <Button
+            android:id="@+id/secondaryButton"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="300dp"
+            android:layout_height="63dp"
+            android:backgroundTint="?attr/colorOnPrimary"
+            android:fontFamily="@font/fredoka_bold"
+            android:gravity="center"
+            android:text="@string/lyc_e"
+            android:textAlignment="center"
+            android:textColor="?colorPrimary"
+            android:textSize="16sp"
+            app:cornerRadius="80dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/creditsButton"
+                android:layout_width="85dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/fredoka_bold"
+                android:background="@drawable/rounded_corner"
+                tools:ignore="RtlHardcoded"
+                android:src="@drawable/ic_about__community_"
+                android:importantForAccessibility="no"/>
+
+            <Button
+                android:id="@+id/settingsButton"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="205dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="5dp"
+                android:backgroundTint="?attr/colorOnPrimary"
+                android:drawableLeft="@drawable/ic_settings"
+                android:fontFamily="@font/fredoka_bold"
+                android:text="@string/settings"
+                android:textColor="?colorPrimary"
+                android:textSize="15sp"
+                app:cornerRadius="80dp"
+                tools:ignore="RtlHardcoded"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

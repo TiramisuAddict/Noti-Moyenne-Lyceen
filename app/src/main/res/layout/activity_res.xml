@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorPrimary"
+    tools:context=".ResActivity">
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="242dp"
+        android:layout_height="118dp"
+        android:gravity="center"
+        android:fontFamily="@font/fredoka_semibold"
+        android:textAlignment="center"
+        android:textColor="?colorOnPrimary"
+        android:textSize="84sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        style="?android:attr/buttonBarButtonStyle"
+        android:id="@+id/menuButton"
+        android:layout_width="320dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="200dp"
+        android:backgroundTint="?colorOnPrimary"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:fontFamily="@font/fredoka_bold"
+        android:text="@string/menu"
+        android:textAlignment="center"
+        android:textColor="?colorPrimary"
+        android:textSize="18sp"
+        app:cornerRadius="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

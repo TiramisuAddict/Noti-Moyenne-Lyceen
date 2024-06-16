@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorPrimary"
+    tools:context=".SeconActivity">
+
+    <ProgressBar
+        android:id="@+id/progress_loader"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18.5dp"
+            android:fontFamily="@font/fredoka_bold"
+            android:text="@string/select_your_level"
+            android:textColor="?colorOnPrimary"
+            android:textSize="28sp"
+            android:textAlignment="center" />
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:backgroundTint="?colorOnPrimary"
+            android:id="@+id/button1ere"
+            android:layout_width="320dp"
+            android:layout_height="63dp"
+            android:gravity="center"
+            android:elevation="8dp"
+            android:fontFamily="@font/fredoka_bold"
+            android:text="@string/_1_ere"
+            android:textColor="?colorPrimary"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            app:cornerRadius="80dp" />
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:backgroundTint="?colorOnPrimary"
+            android:id="@+id/button2eme"
+            android:layout_width="320dp"
+            android:layout_height="63dp"
+            android:fontFamily="@font/fredoka_bold"
+            android:gravity="center"
+            android:elevation="8dp"
+            android:text="@string/_2_eme"
+            android:textColor="?colorPrimary"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            app:cornerRadius="80dp" />
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:backgroundTint="?colorOnPrimary"
+            android:id="@+id/button3eme"
+            android:layout_width="320dp"
+            android:layout_height="63dp"
+            android:fontFamily="@font/fredoka_bold"
+            android:gravity="center"
+            android:elevation="8dp"
+            android:text="@string/_3_eme"
+            android:textColor="?colorPrimary"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            app:cornerRadius="80dp" />
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:backgroundTint="?colorOnPrimary"
+            android:id="@+id/button4eme"
+            android:layout_width="320dp"
+            android:layout_height="63dp"
+            android:fontFamily="@font/fredoka_bold"
+            android:gravity="center"
+            android:elevation="8dp"
+            android:text="@string/_4_eme"
+            android:textColor="?colorPrimary"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            app:cornerRadius="80dp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
