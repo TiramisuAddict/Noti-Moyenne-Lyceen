@@ -30,13 +30,12 @@
 ## Key Features
 
 * Live Update - Make changes, See changes
-* Modern UserInterface & Straight a frorward user experience
-  - Each Card contains all the necessary informations
+* Modern [User Interface](https://www.behance.net/gallery/200141617/NOTI) & Straight a frorward user experience
+  - Well organized and clear
   - Light and Dark Modes
 * Activity History
   - You can see all your previous calculations
 * Error highlighting
-* Up to date coefficients
 
 ## Download
 
