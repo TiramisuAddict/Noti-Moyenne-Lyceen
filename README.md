@@ -47,6 +47,6 @@ Noti is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if yo
 
 ## Related
 
-[Noti-beta](https://github.com/TiramisuAddict/Noti-Betab) - The testing version of the app from 2022 to 2024.
+[Noti-beta](https://github.com/TiramisuAddict/Noti-Beta) - The testing version of the app from 2022 to 2024.
 
 
