@@ -8,16 +8,25 @@ import android.content.Intent
 import android.widget.Button
 import android.widget.Switch
 import android.os.Bundle
+import androidx.core.app.ActivityOptionsCompat
 
 class SettingsActivity : AppCompatActivity() {
     private lateinit var applyB: Button
     private lateinit var saveB: Button
+
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     private lateinit var dwSwitch: Switch
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
+
+        val animations = Animations()
 
         applyB = findViewById(R.id.applyButton)
         saveB = findViewById(R.id.saveB)
@@ -34,7 +43,9 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         saveB.setOnClickListener {
-            startActivity(Intent(this@SettingsActivity, MainActivity::class.java))
+            val intent = Intent(this@SettingsActivity, MainActivity::class.java)
+            val options = animations.swipeEffect(this, "swipeLeft")
+            startActivity(intent, options.toBundle())
         }
     }
 

@@ -9,8 +9,13 @@ import android.widget.TextView
 import android.content.Intent
 import android.widget.Button
 import android.os.Bundle
+import androidx.core.app.ActivityOptionsCompat
 
 class MainActivity : AppCompatActivity() {
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+    }
 
     private fun setTheme() {
         val isNightMode = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
@@ -31,25 +36,36 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setTheme()
+        val animations = Animations()
 
         findViewById<Button>(R.id.preparatoryButton).setOnClickListener {
-            startActivity(Intent(this, PrepActivity::class.java))
+            val intent = Intent(this, PrepActivity::class.java)
+            val options = animations.swipeEffect(this, "swipeRight")
+            startActivity(intent, options.toBundle())
         }
 
         findViewById<Button>(R.id.secondaryButton).setOnClickListener {
-            startActivity(Intent(this, SeconActivity::class.java))
+            val intent = Intent(this, SeconActivity::class.java)
+            val options = animations.swipeEffect(this, "swipeRight")
+            startActivity(intent, options.toBundle())
         }
 
         findViewById<Button>(R.id.settingsButton).setOnClickListener {
-            startActivity(Intent(this, SettingsActivity::class.java))
+            val intent = Intent(this, SettingsActivity::class.java)
+            val options = animations.swipeEffect(this, "swipeRight")
+            startActivity(intent, options.toBundle())
         }
 
         findViewById<ImageButton>(R.id.creditsButton).setOnClickListener {
-            startActivity(Intent(this, CreditsActivity::class.java))
+            val intent = Intent(this, CreditsActivity::class.java)
+            val options = animations.swipeEffect(this, "swipeLeft")
+            startActivity(intent , options.toBundle())
         }
 
         findViewById<CardView>(R.id.historyCard).setOnClickListener {
-            startActivity(Intent(this, HistoryActivity::class.java))
+            val intent = Intent(this, HistoryActivity::class.java)
+            val options = animations.swipeEffect(this, "swipeLeft")
+            startActivity(intent , options.toBundle())
         }
 
         val cardAverage = findViewById<TextView>(R.id.lastAverage)

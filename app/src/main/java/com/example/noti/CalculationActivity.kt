@@ -11,9 +11,14 @@ import android.content.Intent
 import android.widget.Button
 import com.google.gson.Gson
 import android.os.Bundle
+import androidx.core.app.ActivityOptionsCompat
 import java.io.File
 
 class CalculationActivity : AppCompatActivity() {
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+    }
 
     private fun addInfoToJsonFile(historyTab: History) {
         val gson = Gson()
@@ -44,6 +49,7 @@ class CalculationActivity : AppCompatActivity() {
         }
         return (sum / sumCoefficients).toFloat()
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculation)
@@ -85,21 +91,24 @@ class CalculationActivity : AppCompatActivity() {
 
         for(j in 0 until 4){
             if (levelList[j].name == levelName){
-                for(i in 0 until levelList[j].subjectsNumber){
+                for((index, subject) in levelList[j].subjects.withIndex()){
                     val card = Card(
-                        subjectId = levelList[j].subjects[i].subjectId,
-                        subjectName = levelList[j].subjects[i].subjectName,
-                        numberOfFields = levelList[j].subjects[i].numberOfFields,
-                        coefficient = levelList[j].subjects[i].coefficient,
-                        examCoefficients = mutableListOf<Int>().apply { addAll(levelList[j].subjects[i].examCoefficients) },
-                        editTextIds = mutableListOf<String>().apply { addAll(levelList[j].subjects[i].editTextIds) },
-                        editTextPlaceHolders = mutableListOf<String>().apply { addAll(levelList[j].subjects[i].editTextPlaceHolders) },
-                        resultTextViewId = levelList[j].subjects[i].resultTextViewId,
-                        checkBoxId = levelList[j].subjects[i].checkBoxId
+                        subjectId = subject.subjectId,
+                        subjectName = subject.subjectName,
+                        numberOfFields = subject.numberOfFields,
+                        coefficient = subject.coefficient,
+                        examCoefficients = mutableListOf<Int>().apply { addAll(subject.examCoefficients) },
+                        editTextIds = mutableListOf<String>().apply { addAll(subject.editTextIds) },
+                        editTextPlaceHolders = mutableListOf<String>().apply { addAll(subject.editTextPlaceHolders) },
+                        resultTextViewId = subject.resultTextViewId,
+                        checkBoxId = subject.checkBoxId
                     )
 
                     val cardView = card.createCardLayout(this)
                     parentLayout.addView(cardView)
+
+                    val delay = index * 100L // 100ms delay between each card's animation
+                    card.animateCardPop(cardView, delay) // Assuming animateCardPop is a method
 
                     val editTextsList = mutableListOf<EditText>()
                     val resultTextView = findViewById<TextView>(card.resultTextViewId.hashCode())
@@ -131,9 +140,11 @@ class CalculationActivity : AppCompatActivity() {
             )
             addInfoToJsonFile(historyInfo)
 
-            startActivity(
-                Intent(this@CalculationActivity, ResActivity::class.java).putExtra("Moy" ,String.format("%.2f", finalResult))
-            )
+            val animations = Animations()
+
+            val intent = Intent(this@CalculationActivity, ResActivity::class.java).putExtra("Moy" ,String.format("%.2f", finalResult))
+            val options = animations.swipeEffect(this, "swipeRight")
+            startActivity(intent, options.toBundle())
         }
 
     }

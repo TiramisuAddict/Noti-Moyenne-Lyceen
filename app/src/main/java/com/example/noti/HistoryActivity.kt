@@ -9,6 +9,10 @@ import android.os.Bundle
 import java.io.File
 
 class HistoryActivity : AppCompatActivity() {
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +38,7 @@ class HistoryActivity : AppCompatActivity() {
                 val historyList: List<History> = gson.fromJson(existingJson, type) ?: emptyList()
 
                 val cardContainer = findViewById<LinearLayout>(R.id.HistoryCardContainer)
+                var delay = 0L // Initial delay
 
                 for (i in historyList.indices) {
                     val card = HistoryCard(
@@ -45,6 +50,9 @@ class HistoryActivity : AppCompatActivity() {
 
                     val cardView = card.createHistoryCardLayout(this)
                     cardContainer.addView(cardView)
+
+                    card.animateCardPop(cardView, this, delay)
+                    delay += 100
                 }
             }
         }

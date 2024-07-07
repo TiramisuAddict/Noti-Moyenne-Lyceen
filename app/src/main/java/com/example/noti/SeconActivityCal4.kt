@@ -6,39 +6,65 @@ import android.widget.ProgressBar
 import android.content.Intent
 import android.widget.Button
 import android.os.Bundle
+import androidx.core.app.ActivityOptionsCompat
 
 class SeconActivityCal4 : AppCompatActivity() {
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_secon_cal4)
 
+        val animations = Animations()
+
         findViewById<Button>(R.id.bsc4).setOnClickListener {
-            startActivity(Intent(this@SeconActivityCal4 , CalculationActivity::class.java).putExtra("Level", "1ere"))
+            val intent = Intent(this@SeconActivityCal4, CalculationActivity::class.java).putExtra("Level", "1ere")
+            val options = animations.swipeEffect(this, "swipeRight")
+            startActivity(intent, options.toBundle())
+
             findViewById<ProgressBar>(R.id.progress_loader).isVisible = true
         }
 
         findViewById<Button>(R.id.bma4).setOnClickListener {
-            startActivity(Intent(this@SeconActivityCal4 , CalculationActivity::class.java).putExtra("Level", "1ere"))
+            val intent = Intent(this@SeconActivityCal4, CalculationActivity::class.java).putExtra("Level", "1ere")
+            val options = animations.swipeEffect(this, "swipeRight")
+            startActivity(intent, options.toBundle())
+
             findViewById<ProgressBar>(R.id.progress_loader).isVisible = true
         }
 
         findViewById<Button>(R.id.ble4).setOnClickListener {
-            startActivity(Intent(this@SeconActivityCal4 , CalculationActivity::class.java).putExtra("Level", "1ere"))
+            val intent = Intent(this@SeconActivityCal4, CalculationActivity::class.java).putExtra("Level", "1ere")
+            val options = animations.swipeEffect(this, "swipeRight")
+            startActivity(intent, options.toBundle())
+
             findViewById<ProgressBar>(R.id.progress_loader).isVisible = true
         }
 
         findViewById<Button>(R.id.bin4).setOnClickListener {
-            startActivity(Intent(this@SeconActivityCal4 , CalculationActivity::class.java).putExtra("Level", "1ere"))
+            val intent = Intent(this@SeconActivityCal4, CalculationActivity::class.java).putExtra("Level", "1ere")
+            val options = animations.swipeEffect(this, "swipeRight")
+            startActivity(intent, options.toBundle())
+
             findViewById<ProgressBar>(R.id.progress_loader).isVisible = true
         }
 
         findViewById<Button>(R.id.bte4).setOnClickListener {
-            startActivity(Intent(this@SeconActivityCal4 , CalculationActivity::class.java).putExtra("Level", "1ere"))
+            val intent = Intent(this@SeconActivityCal4, CalculationActivity::class.java).putExtra("Level", "1ere")
+            val options = animations.swipeEffect(this, "swipeRight")
+            startActivity(intent, options.toBundle())
+
             findViewById<ProgressBar>(R.id.progress_loader).isVisible = true
         }
 
         findViewById<Button>(R.id.bec4).setOnClickListener {
-            startActivity(Intent(this@SeconActivityCal4 , CalculationActivity::class.java).putExtra("Level", "1ere"))
+            val intent = Intent(this@SeconActivityCal4, CalculationActivity::class.java).putExtra("Level", "1ere")
+            val options = animations.swipeEffect(this, "swipeRight")
+            startActivity(intent, options.toBundle())
+
             findViewById<ProgressBar>(R.id.progress_loader).isVisible = true
         }
 

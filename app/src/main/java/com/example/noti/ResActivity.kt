@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Button
 import android.os.Bundle
+import androidx.core.app.ActivityOptionsCompat
 
 class ResActivity : AppCompatActivity() {
     private lateinit var resultTextView: TextView
@@ -20,9 +21,16 @@ class ResActivity : AppCompatActivity() {
         }.apply()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_res)
+
+        val animations = Animations()
 
         resultTextView = findViewById(R.id.resultText)
         menuButton = findViewById(R.id.menuButton)
@@ -31,7 +39,10 @@ class ResActivity : AppCompatActivity() {
 
         menuButton.setOnClickListener {
             finish()
-            startActivity(Intent(this, MainActivity::class.java))
+            val intent = Intent(this, MainActivity::class.java)
+            val options = animations.swipeEffect(this, "swipeRight")
+            startActivity(intent, options.toBundle())
+
             saveData()
         }
     }

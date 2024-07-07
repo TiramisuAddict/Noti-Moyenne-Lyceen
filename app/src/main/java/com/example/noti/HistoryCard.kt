@@ -8,6 +8,11 @@ import android.widget.TextView
 import android.graphics.Color
 import android.view.Gravity
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
+import android.view.View
+import androidx.core.content.ContextCompat
+
 data class History(
     val title: String,
     val subjectCount: Int,
@@ -26,6 +31,29 @@ class HistoryCard (
     val gradesList : List<Grades>,
     val finalGrade : String
 ) {
+
+    fun animateCardPop(cardView: CardView, context: Context, delay: Long) {
+        val scaleUpX = ObjectAnimator.ofFloat(cardView, "scaleX", 0.96f).apply {
+            duration = 350
+        }
+        val scaleUpY = ObjectAnimator.ofFloat(cardView, "scaleY", 0.96f).apply {
+            duration = 350
+        }
+        val scaleDownX = ObjectAnimator.ofFloat(cardView, "scaleX", 1f).apply {
+            duration = 250
+        }
+        val scaleDownY = ObjectAnimator.ofFloat(cardView, "scaleY", 1f).apply {
+            duration = 250
+        }
+
+        AnimatorSet().apply {
+            startDelay = delay
+            play(scaleUpX).with(scaleUpY)
+            play(scaleDownX).with(scaleDownY).after(scaleUpX)
+            start()
+        }
+    }
+
     private fun Context.dpToPx(dp: Int): Int {
         val density = resources.displayMetrics.density
         return (dp * density).toInt()
@@ -41,8 +69,8 @@ class HistoryCard (
                 LinearLayout.LayoutParams.WRAP_CONTENT
             ).apply {
                 gravity = Gravity.CENTER
-                topMargin = context.dpToPx(10)
-                bottomMargin = context.dpToPx(10)
+                topMargin = context.dpToPx(9)
+                bottomMargin = context.dpToPx(9)
 
                 setCardBackgroundColor(Color.parseColor("#FFFFFF"))
             }

@@ -16,6 +16,9 @@ import android.text.Editable
 import android.view.Gravity
 import android.view.View
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
+
 data class Subjects(
     var subjectName: String,
     var subjectId: Int,
@@ -37,6 +40,29 @@ class Card(
 )
 
 {
+
+    fun animateCardPop(view: View, delay: Long) {
+        val scaleUpX = ObjectAnimator.ofFloat(view, "scaleX", 0.96f).apply {
+            duration = 350
+        }
+        val scaleUpY = ObjectAnimator.ofFloat(view, "scaleY", 0.96f).apply {
+            duration = 350
+        }
+        val scaleDownX = ObjectAnimator.ofFloat(view, "scaleX", 1f).apply {
+            duration = 250
+        }
+        val scaleDownY = ObjectAnimator.ofFloat(view, "scaleY", 1f).apply {
+            duration = 250
+        }
+
+        AnimatorSet().apply {
+            play(scaleUpX).with(scaleUpY)
+            play(scaleDownX).with(scaleDownY).after(scaleUpX)
+            this.startDelay = delay
+            start()
+        }
+    }
+
     private fun Context.dpToPx(dp: Int): Int {
         val density = resources.displayMetrics.density
         return (dp * density).toInt()
@@ -184,7 +210,6 @@ class Card(
         resultTextView.setTextColor(Color.parseColor("#1B385C"))
 
         linearLayout.addView(resultTextView)
-
         return cardView
     }
 
