@@ -45,8 +45,4 @@ You can [download](https://play.google.com/store/apps/details?id=com.noti.tn) th
 
 Noti is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this app or it has helped you in any way, I'd like you send me an email at <taha.medien2@gmail.com> about anything you'd want to say about this software. I'd really appreciate it!
 
-## Related
-
-[Noti-beta](https://github.com/TiramisuAddict/Noti-Beta) - The testing version of the app from 2022 to 2024.
-
 
